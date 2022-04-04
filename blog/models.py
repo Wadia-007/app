@@ -6,6 +6,7 @@ from django.utils.text import slugify
 from tinymce import models as tinymce_models
 from bs4 import BeautifulSoup
 from django.urls import reverse
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class Category(models.Model):
@@ -39,7 +40,7 @@ class Post(models.Model):
     status = models.CharField(max_length=1, choices=statuses)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     author = models.ForeignKey(MyUser, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='blog/post', default="post-default.jpg", blank=True)
+    image = CloudinaryField(folder='blog/post', default="post-default.jpg", blank=True)
     img_text = models.CharField(max_length=40, blank=True)
     date = models.DateField(auto_now=True)
     time = models.TimeField(auto_now=True)
