@@ -2,26 +2,37 @@
 <html lang="en">
 
 <head>
-
+	{% load static %}
 	<title>{{ post.title }}</title>
 	<!-- Meta Tags -->
 	<script type="application/ld+json">
-		{
-		  "@context": "https://schema.org",
-		  "name": "{{ post.title }}",
-		  "startDate": "{{ post.date }}",
-		  "endDate": "2025-07-21T23:00-05:00",
-		  "location": [{
-			"@type": "VirtualLocation",
-			"url": "https://www.postindianews.com/posts/{{ post.slug }}"
-		  },
-		  "image": [
-			"{{ post.image.url }}"
-		   ],
-		  "description": "{{ post.meta_desc }}",
-		  
+	{
+		"@context": "https://schema.org",
+		"@type": "Article",
+		"mainEntityOfPage": {
+		"@type": "WebPage",
+		"@id": "https://www.postindianews.com/posts/{{ post.slug }}"
+		},
+		"headline": "{{ post.title }}",
+		"description": "{{ post.meta_desc }}",
+		"image": "{{ post.image.url }}",  
+		"author": {
+		"@type": "Person",
+		"name": "{{ post.author.get_full_name }}"
+		},  
+		"publisher": {
+		"@type": "Organization",
+		"name": "postindanews.com",
+		"logo": {
+			"@type": "ImageObject",
+			"url": "{% static 'images/logo.svg' %}"
 		}
-		</script>
+		},
+		"datePublished": "{{ post.date }}",
+	}
+	</script>
+
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
@@ -48,7 +59,7 @@
 
 
 	<!-- Favicon -->
-	{% load static %}
+
 	<link rel="shortcut icon" href="{% static 'images/fav4.png' %}">
 
 	<!-- Google Font -->
@@ -138,7 +149,7 @@ Inner intro START -->
 					<div class="col-12">
 						<a class="badge bg-danger mb-2"><i class="fas fa-circle me-2 small 
 							fw-bold"></i>{{ post.category }}</a>
-						<h1 >{{ post.title }}</h1>
+						<h1>{{ post.title }}</h1>
 					</div>
 				</div>
 			</div>
@@ -203,12 +214,14 @@ Main START -->
 							<h2 class="my-3 text-center">Related post</h2>
 							<div class="row">
 								<div class="col">
-									<p style="font-size: small;"><i class="bi bi-arrow-left-circle me-2"></i>Silde Left</p>
+									<p style="font-size: small;"><i class="bi bi-arrow-left-circle me-2"></i>Silde Left
+									</p>
 								</div>
-							    <div class="col">
-									<p style="font-size: small; text-align: right;">Silde Right<i class="bi bi-arrow-right-circle me-2" style="margin-left: 6px;"></i></p>
+								<div class="col">
+									<p style="font-size: small; text-align: right;">Silde Right<i
+											class="bi bi-arrow-right-circle me-2" style="margin-left: 6px;"></i></p>
 								</div>
-						    </div>
+							</div>
 							<div class="tiny-slider arrow-hover arrow-blur arrow-white arrow-round">
 								<div class="tiny-slider-inner" data-autoplay="true" data-hoverpause="true"
 									data-gutter="24" data-arrow="true" data-dots="false" data-items-xl="2"
