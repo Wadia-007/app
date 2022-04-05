@@ -30,7 +30,7 @@ SECRET_KEY = '-c_m6!nr-(hr5it9jg1ihj4s)^a)w+xi8xcxq&p*074hq0ln&4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','postindianews.pythonanywhere.com','postindianews.com','postindianews.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','postindianews.pythonanywhere.com','www.postindianews.com','postindianews.herokuapp.com']
 
 
 # Application definition
