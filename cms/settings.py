@@ -13,12 +13,20 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import django_heroku
 import os
 import cloudinary
+# NEW
+from pathlib import Path
+
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# OLD SETTINGS
+# # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+# TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+
+TEMPLATES_DIR = BASE_DIR / 'templates'
 
 
 # Quick-start development settings - unsuitable for production
@@ -143,14 +151,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
+
+
+# STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
+STATIC_ROOT = BASE_DIR / 'static'
 STATIC_URL = '/static/'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Media files
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+# MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_ROOT = BASE_DIR / 'media'
 
 
 # Login/Logout Redirect urls
@@ -161,8 +173,13 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 AUTH_USER_MODEL = 'account.MyUser'
 
-TINYMCE_JS_URL = os.path.join(MEDIA_URL, "tinymce/js/tinymce/tinymce.min.js")
-TINYMCE_JS_ROOT = os.path.join(MEDIA_ROOT, "tinymce")
+# TINYMCE_JS_URL = os.path.join(MEDIA_URL, "tinymce/js/tinymce/tinymce.min.js")
+# TINYMCE_JS_ROOT = os.path.join(MEDIA_ROOT, "tinymce")
+
+TINYMCE_JS_URL = os.path.join(STATIC_URL, "tinymce/tinymce.min.js")
+TINYMCE_JS_ROOT = os.path.join(STATIC_ROOT, "tinymce")
+
+
 TINYMCE_DEFAULT_CONFIG = {
     "height": "400px",
     "width": "700px",
