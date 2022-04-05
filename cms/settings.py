@@ -31,7 +31,8 @@ SECRET_KEY = '-c_m6!nr-(hr5it9jg1ihj4s)^a)w+xi8xcxq&p*074hq0ln&4'
 DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1','postindianews.pythonanywhere.com','www.postindianews.com','postindianews.herokuapp.com']
-
+#CSRF_TRUSTED_ORIGINS=['https://www.postindianews.com','https://postindianews.com','127.0.0.1']
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Application definition
 SITE_ID = 1
