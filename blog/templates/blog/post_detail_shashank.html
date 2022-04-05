@@ -4,6 +4,7 @@
 <head>
 
 	<title>{{ post.title }}</title>
+	{% load static %}
 	<script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
@@ -57,7 +58,6 @@
 
 
 	<!-- Favicon -->
-	{% load static %}
 	<link rel="shortcut icon" href="{% static 'images/fav4.png' %}">
 
 	<!-- Google Font -->

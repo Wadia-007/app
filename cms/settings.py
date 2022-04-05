@@ -36,7 +36,7 @@ TEMPLATES_DIR = BASE_DIR / 'templates'
 SECRET_KEY = '-c_m6!nr-(hr5it9jg1ihj4s)^a)w+xi8xcxq&p*074hq0ln&4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','postindianews.pythonanywhere.com','www.postindianews.com','postindianews.herokuapp.com']
 CSRF_TRUSTED_ORIGINS=['https://www.postindianews.com','https://postindianews.com','http://127.0.0.1']
