@@ -172,10 +172,26 @@ Header START -->
 					<span class="text-body h6 d-none d-sm-inline-block">Menu</span>
 					<span class="navbar-toggler-icon"></span>
 				</button>
+				
 
 				<!-- Main navbar START -->
 				<div class="collapse navbar-collapse" id="navbarCollapse">
 					<ul class="navbar-nav navbar-nav-scroll mx-auto">
+						
+						<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+							<div itemprop="logo" content="https://postindianews.com/static/images/logo.svg"
+								itemscope itemtype="https://schema.org/ImageObject">
+								<meta itemprop="url"
+									content="https://postindianews.com/static/images/logo.svg">
+								</meta>
+								<meta itemprop="width" content="100">
+								</meta>
+								<meta itemprop="height" content="30">
+								</meta>
+							</div>
+							<meta itemprop="name" content="PostIndiaNews">
+							</meta>
+						</div>
 
 						<!-- Nav item 1 Demos -->
 						{% for category in categories %}
