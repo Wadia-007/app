@@ -25,12 +25,14 @@
 	<link rel="canonical" href="https://www.postindianews.com" />
 	<link rel="sitemap" type="application/xml" title="PostIndiaNews Top Stories"
 		href="https://www.postindianews.com/sitemap.xml" />
-	<link rel="preconnect" crossorigin="" href="https://www.google-analytics.com/" />
+	<link rel="preconnect" crossorigin href="https://fonts.googleapis.com/" />
+	<link rel="preconnect" crossorigin href="https://www.google-analytics.com/" />
+	<link rel="preload" as="script" href="https://www.google-analytics.com/analytics.js" />
 
 	<script type="application/ld+json">
-		{"@context":"https:\/\/schema.org",
+		{"@context":"https://schema.org",
 		"@type":"WebSite",
-		"url":"https:\/\/www.postindianews.com",
+		"url":"https://www.postindianews.com",
 		"name":"PostIndiaNews"
 		}
 		</script>
@@ -177,22 +179,6 @@ Header START -->
 				<!-- Main navbar START -->
 				<div class="collapse navbar-collapse" id="navbarCollapse">
 					<ul class="navbar-nav navbar-nav-scroll mx-auto">
-						
-						<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-							<div itemprop="logo" content="https://postindianews.com/static/images/logo.svg"
-								itemscope itemtype="https://schema.org/ImageObject">
-								<meta itemprop="url"
-									content="https://postindianews.com/static/images/logo.svg">
-								</meta>
-								<meta itemprop="width" content="100">
-								</meta>
-								<meta itemprop="height" content="30">
-								</meta>
-							</div>
-							<meta itemprop="name" content="PostIndiaNews">
-							</meta>
-						</div>
-
 						<!-- Nav item 1 Demos -->
 						{% for category in categories %}
 						<li class="nav-item dropdown">
