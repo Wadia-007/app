@@ -16,10 +16,6 @@
 		"headline": "{{ post.title }}",
 		"description": "{{ post.meta_desc }}",
 		"image": "{{ post.image.url }}",  
-		"author": {
-			"@type": "Author",
-			"name": "{{ post.author.get_full_name }}"
-		},  
 		"publisher": {
 			"@type": "Organization",
 			"name": "postindanews.com",
@@ -33,16 +29,31 @@
 	</script>
 	<script type="application/ld+json">
 		{
-			"@context": "http://schema.org/",
-			"@type": "WebPage",
+		  "@context": "https://schema.org",
+		  "@type": "WebPage",
+		  "name": "{{ post.title }}",
+		  "description": "{{ post.meta_desc }}",
+		  "keywords": "{{ post.meta_tag }}",
+		  "url": "https://www.postindianews.com/posts/{{ post.slug }}",
+		  "publisher":{
+			"@type": "Organization",
+			"name": "PostIndiaNews",
+			"url": "https://www.postindianews.com"},
+		  "mainEntity":{
+			"@type": "Article",
+			"author": "{{ post.author.get_full_name }}",
+			"datePublished": "{{ post.date }}",
+			"image": "{{ post.image.url }}",
+			"inLanguage": "English",
 			"name": "{{ post.title }}",
-			"description": "{{ post.meta_desc }}",
-			"keywords": "{{ post.meta_tag }}",
-			"url": "https://www.postindianews.com/posts/{{ post.slug }}",
-			"publisher":{
-				"@type": "Organization",
-				"name": "PostIndiaNews",
-				"url": "https://www.postindianews.com"
+			
+			"publisher": "PostIndiaNews",
+			"aggregateRating": {
+			   "@type": "AggregateRating",
+			   "ratingValue": "4.6",
+			   "reviewCount": "1324"
+			}
+		  
 			}
 		}
 	</script>
