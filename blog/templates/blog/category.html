@@ -4,17 +4,16 @@
 <head>
 	{% load static %}
 	{% for post in posts|slice:":1" %}
-	<title>Category - {{ post.category }}</title>
+	<title>PostIndiaNews - {{ post.category }}</title>
     {% endfor %}
 
 	<!-- Meta Tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="author" content="PostIndiaNews.com">
-	{% for post in posts|slice:":1" %}
-	{{ post.category }}
-	<meta name="description" content="PostIndiaNews">
-    {% endfor %}
+	<meta name="description" content="We provides latest news from India and around the world. Get breaking news alerts from India and follow today’s live news updates in field of politics, business, technology, Bollywood, cricket and more.">
+	<meta property="og:description" content="We provides latest news from India and around the world. Get breaking news alerts from India and follow today’s live news updates in field of politics, business, technology, Bollywood, cricket and more." />
+	
 
 	<!-- Favicon -->
 	
