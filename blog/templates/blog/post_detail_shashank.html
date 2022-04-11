@@ -6,6 +6,36 @@
 	<title>{{ post.title }}</title>
 	{% load static %}
 	<script type="application/ld+json">
+		{
+		  "@context": "https://schema.org",
+		  "@type": "WebPage",
+		  "name": "{{ post.title }}",
+		  "description": "{{ post.meta_desc }}",
+		  "keywords": "{{ post.meta_tag }}",
+		  "url": "https://www.postindianews.com/posts/{{ post.slug }}",
+		  "publisher":{
+			"@type": "Organization",
+			"name": "PostIndiaNews",
+			"url": "https://www.postindianews.com"},
+		  "mainEntity":{
+			"@type": "Article",
+			"author": "{{ post.author.get_full_name }}",
+			"datePublished": "{{ post.date }}",
+			"image": "{{ post.image.url }}",
+			"inLanguage": "English",
+			"name": "{{ post.title }}",
+			
+			"publisher": "PostIndiaNews",
+			"aggregateRating": {
+			   "@type": "AggregateRating",
+			   "ratingValue": "4.6",
+			   "reviewCount": "1324"
+			}
+		  
+			}
+		}
+	</script>
+	<script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
 		"@type": "Article",
